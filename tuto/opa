@@ -1,0 +1,24 @@
+use std::io;
+
+//o & comercial para falar que o dado da entrada eh string e o ->i32 para falar q resultado eh 1 int de 32 bit
+fn converter_para_int(entrada: & String) ->i32{
+    let x = entrada.trim().parse::<i32>().unwrap(); //unwrap desenvelopa(pega valor dentro do container)
+    x           //o retorno da funcao
+}
+
+fn main() {
+    
+    let mut num1 = String::new();     //mut pq eh mutavel e new para reservar espaço na memoria
+    
+    io::stdin().read_line(&mut num1).expect("erro");    //stdin(standard input) read line para ler ai passa a carac da variavel e nome
+                                        //expect tratamento exceção
+    let mut num2 = String::new();
+    io::stdin().read_line(&mut num2).expect("erro");
+
+    if converter_para_int(&num1) > converter_para_int(&num2){ //esse & para fazer a conversao do tipo
+        println!("O numero {} e maior que {}", num1,num2 );
+    }
+    else{
+        println!("O Numero {} e menor ou igual a {}",num1,num2);
+    }
+}
